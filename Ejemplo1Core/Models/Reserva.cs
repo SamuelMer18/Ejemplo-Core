@@ -6,19 +6,16 @@ namespace Ejemplo1Core.Models
     public class Reserva
     {
         [Key]
-        private int id;
-        private DateTime fecha;
-        [ForeignKey("idest")]
-        private int idest;
-        [ForeignKey("idlibro")]
-        private int idlibro;
+        public int Id { get; set; }
+        public DateTime Fecha { get; set; }
 
-        public int Id { get => id; set => id = value; }
-        public DateTime Fecha { get => fecha; set => fecha = value; }
-        public int Idest { get => idest; set => idest = value; }
-        public int Idlibro { get => idlibro; set => idlibro = value; }
+        public int LibroId { get; set; }
+        public int EstudianteId { get; set; }
 
+        [ForeignKey("LibroId")]
         public virtual libro Libro { get; set; }
+
+        [ForeignKey("EstudianteId")]
         public virtual Estudiante Estudiante { get; set; }
     }
 }

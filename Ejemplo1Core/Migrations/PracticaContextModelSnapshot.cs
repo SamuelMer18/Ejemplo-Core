@@ -57,12 +57,6 @@ namespace Ejemplo1Core.Migrations
                     b.Property<DateTime>("Fecha")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("Idest")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Idlibro")
-                        .HasColumnType("int");
-
                     b.Property<int>("LibroId")
                         .HasColumnType("int");
 

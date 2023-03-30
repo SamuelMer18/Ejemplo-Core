@@ -6,11 +6,18 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Ejemplo1Core.Migrations
 {
     /// <inheritdoc />
-    public partial class ReservaEstudiante : Migration
+    public partial class fixreserva1 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.AddColumn<int>(
+                name: "Precio",
+                table: "libro",
+                type: "int",
+                nullable: false,
+                defaultValue: 0);
+
             migrationBuilder.CreateTable(
                 name: "Estudiante",
                 columns: table => new
@@ -32,8 +39,6 @@ namespace Ejemplo1Core.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Fecha = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Idest = table.Column<int>(type: "int", nullable: false),
-                    Idlibro = table.Column<int>(type: "int", nullable: false),
                     LibroId = table.Column<int>(type: "int", nullable: false),
                     EstudianteId = table.Column<int>(type: "int", nullable: false)
                 },
@@ -73,6 +78,10 @@ namespace Ejemplo1Core.Migrations
 
             migrationBuilder.DropTable(
                 name: "Estudiante");
+
+            migrationBuilder.DropColumn(
+                name: "Precio",
+                table: "libro");
         }
     }
 }

@@ -14,7 +14,7 @@ namespace Ejemplo1Core.Controllers
         }
         public IActionResult Index()
         {
-            IEnumerable<libro> ListaLibros = _context.libro/*.ToList()*/;
+            IEnumerable<libro> ListaLibros = _context.libro;
             return View(ListaLibros);
         }
         public IActionResult Crear()

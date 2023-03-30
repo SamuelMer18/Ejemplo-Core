@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Ejemplo1Core.Migrations
 {
     [DbContext(typeof(PracticaContext))]
-    [Migration("20230330170809_ReservaEstudiante")]
-    partial class ReservaEstudiante
+    [Migration("20230330194024_fixreserva1")]
+    partial class fixreserva1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -59,12 +59,6 @@ namespace Ejemplo1Core.Migrations
 
                     b.Property<DateTime>("Fecha")
                         .HasColumnType("datetime2");
-
-                    b.Property<int>("Idest")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Idlibro")
-                        .HasColumnType("int");
 
                     b.Property<int>("LibroId")
                         .HasColumnType("int");
