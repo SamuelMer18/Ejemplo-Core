@@ -9,13 +9,14 @@ namespace Ejemplo1Core.Models
         public int Id { get; set; }
         public DateTime Fecha { get; set; }
 
+        [ForeignKey("LibroId")]
+
         public int LibroId { get; set; }
+        [ForeignKey("EstudianteId")]
+
         public int EstudianteId { get; set; }
 
-        [ForeignKey("LibroId")]
-        public virtual libro Libro { get; set; }
-
-        [ForeignKey("EstudianteId")]
-        public virtual Estudiante Estudiante { get; set; }
+       /* public virtual libro Libro { get; set; }
+        public virtual Estudiante Estudiante { get; set; }*/
     }
 }
